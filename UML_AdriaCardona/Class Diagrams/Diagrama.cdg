@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Diagrama">
+  <ClassDiagramComponents>
+    <Class name="Aula" package="" visibility="public" xPosition="117.0" yPosition="100.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="capacidadMaximaAlumnes" type="int" visibility="private"/>
+        <Field name="quantitatOrdinadors" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="comprobarOrdinadorsAula" returnType="void" visibility="public"/>
+        <Method name="comprobarAlumnesAula" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Alumnes" package="" visibility="public" xPosition="29.0" yPosition="382.0">
+      <Fields>
+        <Field name="dataNaixement" type="String" visibility="private"/>
+        <Field name="codiCicle" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Professor" package="" visibility="public" xPosition="300.0" yPosition="382.0">
+      <Fields>
+        <Field name="departament" type="String" visibility="private"/>
+        <Field name="carrec" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Persona" package="" visibility="public" isAbstract="true" xPosition="144.0" yPosition="562.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="cognoms" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Alumnes" target="Persona"/>
+    <HasRelation name="Ocupa" source="Alumnes" target="Aula" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="Dirigeix" source="Professor" target="Aula" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <IsRelation name="is" source="Professor" target="Persona"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
